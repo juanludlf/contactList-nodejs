@@ -1,6 +1,6 @@
 {
   "name": "contactlist",
-  "version": "0.1",
+  "version": "0.0.1",
   "description": "A sample Node.js app using Express",
   "main": "server.js",
   "scripts": {
