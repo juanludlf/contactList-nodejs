@@ -4,6 +4,7 @@ var fs = require('fs');
 var bodyParser = require('body-parser');
 var DataStore = require('nedb');
 
+var port = (process.env.PORT || 10000);
 
 var app = express();
 
@@ -60,7 +61,7 @@ app.post('/contacts',function(req,res){
 app.delete('/contacts/:id',function(req,res){
 	var id = req.params.id;
 	console.log('New DELETE request for contact with id '+id);
-	
+
 	db.remove({ _id: id},{}, function(err,numRemoved){
 		console.log("Contacts removed: "+numRemoved);
 		if(numRemoved  == 1)
@@ -70,6 +71,5 @@ app.delete('/contacts/:id',function(req,res){
 	});
 });
 
-app.listen(5000);
-console.log('Magic is happening on port 5000');
-
+app.listen(port);
+console.log('Magic is happening on port '+port);

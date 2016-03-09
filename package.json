@@ -1,15 +1,12 @@
 {
   "name": "contactlist",
   "version": "0.0.1",
-  "description": "A sample Node.js app using Express",
+  "description": "A simple contactlist",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "body-parser": "1.14.1",
-    "nedb": "1.4.0",
-    "ejs": "2.3.3",
     "express": "4.13.3"
   },
   "engines": {
