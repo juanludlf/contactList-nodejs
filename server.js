@@ -56,6 +56,21 @@ app.post('/contacts',function(req,res){
 	console.log('New POST request');
 	console.log(req.body);
 	db.insert(req.body);
+	res.sendStatus(200);
+});
+
+app.get('/contacts/:name',function(req,res){
+	var n = req.params.name;
+	console.log('New GET request for contact with name '+n);
+
+	db.find({ name : n},function (err,contacts){
+		console.log("Contacts obtained: "+contacts.length);
+		if(contacts.length  > 0){
+			res.send(contacts[0]);
+		}else{
+			res.sendStatus(404);
+		}
+	});
 });
 
 app.delete('/contacts/:id',function(req,res){
