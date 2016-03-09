@@ -18,9 +18,9 @@ myApp.controller('AppCtrl',['$scope','$http',function($scope,$http){
 		refresh();
 	}
 
-	$scope.deleteContact = function(id){
-		console.log("Deleting contact with "+id);
-		$http.delete('/contacts/'+id);
+	$scope.deleteContact = function(name){
+		console.log("Deleting contact with "+name);
+		$http.delete('/contacts/'+name);
 		refresh();
 	}
 

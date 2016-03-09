@@ -73,11 +73,11 @@ app.get('/contacts/:name',function(req,res){
 	});
 });
 
-app.delete('/contacts/:id',function(req,res){
-	var id = req.params.id;
-	console.log('New DELETE request for contact with id '+id);
+app.delete('/contacts/:name',function(req,res){
+	var n = req.params.name;
+	console.log('New DELETE request for contact with name '+n);
 
-	db.remove({ _id: id},{}, function(err,numRemoved){
+	db.remove({ name: n},{}, function(err,numRemoved){
 		console.log("Contacts removed: "+numRemoved);
 		if(numRemoved  == 1)
 			res.sendStatus(200);
