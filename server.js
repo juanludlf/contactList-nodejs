@@ -4,7 +4,7 @@ var fs = require('fs');
 var bodyParser = require('body-parser');
 var DataStore = require('nedb');
 
-var port = (process.env.PORT || 10000);
+var port = (process.env.PORT || 8080);
 
 var app = express();
 
@@ -22,8 +22,8 @@ db.find({}, function(err, contacts) {
         console.log('Empty DB, loading initial data');
 
         person1 = {
-            name: 'Pablo',
-            email: 'pafmon@gmail.com',
+            name: 'Antonio',
+            email: 'antonio@gmail.com',
             number: '682 123 123'
         };
 
